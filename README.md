@@ -4,6 +4,7 @@ Repositório para construção e implementação de infra as a code para projeto
 
 # Runbook - Terraform via EC2 (1 ambiente)
 
+
 ## Rodar manual (na EC2)
 ```bash
 git pull
