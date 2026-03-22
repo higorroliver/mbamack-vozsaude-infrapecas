@@ -1,0 +1,34 @@
+###############################################################################
+# Exemplo de terraform.tfvars — Vozes da Saúde
+#
+# Copie este arquivo para terraform.tfvars e ajuste os valores conforme
+# seu ambiente AWS Learner Lab:
+#
+#   cp terraform.tfvars.example terraform.tfvars
+#
+###############################################################################
+
+aws_region   = "us-east-1"
+project_name = "vozes-da-saude"
+environment  = "lab"
+owner        = "mba-mackenzie"
+
+# O nome do bucket deve ser globalmente único na AWS.
+# Ajuste com um sufixo único (ex: seu RA ou timestamp).
+bucket_name = "vozes-da-saude-datalake"
+
+# Agendamento da Lambda de ingestão (EventBridge)
+# Exemplos: "rate(1 day)", "rate(12 hours)", "cron(0 8 * * ? *)"
+lambda_schedule_expression = "rate(1 day)"
+
+# Configurações da Lambda
+lambda_timeout  = 300
+lambda_memory_size = 256
+
+# Prefixo para resultados do Athena no S3
+athena_results_prefix = "athena-results"
+
+# Tags adicionais (opcionais)
+tags = {
+  team = "data-engineering"
+}
