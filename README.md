@@ -199,16 +199,6 @@ Todos os recursos recebem as seguintes tags:
 | repository  | mbamack-vozsaude-infrapecas    |
 | owner       | mba-mackenzie                  |
 
-## Observações para AWS Learner Lab
-
-1. **Credenciais temporárias:** O Learner Lab gera credenciais temporárias. Certifique-se de que o `~/.aws/credentials` ou variáveis de ambiente estão atualizados antes de cada execução.
-2. **Região:** Use `us-east-1` (padrão) para melhor compatibilidade com o Learner Lab.
-3. **Bucket name:** Deve ser globalmente único. Ajuste no `terraform.tfvars`.
-4. **State local:** O Terraform state é armazenado localmente (não há backend remoto configurado). Mantenha o arquivo `terraform.tfstate` seguro.
-5. **Crawlers Glue:** Os crawlers são criados mas **não executados automaticamente**. Execute manualmente pelo Console ou AWS CLI quando houver dados nas camadas.
-6. **Lambda placeholder:** O código da Lambda é um placeholder. Substitua a lógica em `terraform/lambda/ingestion/handler.py` pela implementação real de coleta de dados.
-7. **Custos:** Todos os serviços escolhidos são compatíveis com o free tier ou de custo muito baixo. O Athena cobra por volume de dados consultados — use com moderação no lab.
-
 ## Variáveis disponíveis
 
 | Variável                     | Tipo       | Default                | Descrição                                        |
